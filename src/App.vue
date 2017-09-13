@@ -1,60 +1,36 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links  ss</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+    <yd-layout>
+        <yd-navbar slot="navbar" title="NavBar">
+            <router-link to="#" slot="left">
+                <yd-navbar-back-icon></yd-navbar-back-icon>
+            </router-link>
+        </yd-navbar>
+
+        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
+        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
+        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
+
+        <yd-tabbar slot="tabbar">
+            <yd-tabbar-item title="首页" link="#" active>
+                <yd-icon name="home" slot="icon"></yd-icon>
+            </yd-tabbar-item>
+            <yd-tabbar-item title="购物车" link="#">
+                <yd-icon name="shopcart-outline" slot="icon"></yd-icon>
+            </yd-tabbar-item>
+            <yd-tabbar-item title="个人中心" link="#">
+                <yd-icon name="ucenter-outline" slot="icon"></yd-icon>
+            </yd-tabbar-item>
+        </yd-tabbar>
+    </yd-layout>
 </template>
 
-<script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+<script type="text/babel">
+    export default {
+        name: 'app',
+        data () {
+            return {
+                msg: 'Welcome to Your Vue.js App'
+            }
+        }
     }
-  }
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
