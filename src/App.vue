@@ -5,11 +5,7 @@
                 <yd-navbar-back-icon></yd-navbar-back-icon>
             </router-link>
         </yd-navbar>
-
-        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
-        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
-        <div>乱七八糟的内容在这里，超出容器，将出现滚动条。</div>
-
+        <lb-menu></lb-menu>
         <yd-tabbar slot="tabbar">
             <yd-tabbar-item title="首页" link="#" active>
                 <yd-icon name="home" slot="icon"></yd-icon>
@@ -21,12 +17,17 @@
                 <yd-icon name="ucenter-outline" slot="icon"></yd-icon>
             </yd-tabbar-item>
         </yd-tabbar>
+        <router-view></router-view>
     </yd-layout>
 </template>
 
 <script type="text/babel">
+    import LbMenu from './views/menu.vue';
     export default {
         name: 'app',
+        components: {
+            LbMenu
+        },
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App'
