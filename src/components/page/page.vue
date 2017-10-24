@@ -11,7 +11,7 @@
             </slot>
         </div>
         <yd-tabbar slot="tabbar">
-            <yd-tabbar-item title="首页" link="#" active>
+            <yd-tabbar-item title="首页" link="#" @click="clickHome" active>
                 <yd-icon name="home" slot="icon"></yd-icon>
             </yd-tabbar-item>
             <yd-tabbar-item title="商品" link="#">
@@ -28,32 +28,6 @@
     </yd-layout>
 </template>
 
-<!--<template>-->
-<!--<transition name="page-fade">-->
-<!--<div class="info-page" :style="index">-->
-<!--<div class="page-wrapper">-->
-<!--<div class="page-header">-->
-<!--<div class="header-item"><i class="gray icon-return" @click="close"></i></div>-->
-<!--<div class="header-item">-->
-<!--<slot name="title">-->
-<!--{{title}}-->
-<!--</slot>-->
-<!--</div>-->
-<!--<div class="header-item"><i class="gray icon-innerpage__close" @click="close"></i></div>-->
-<!--</div>-->
-<!--<div class="page-body">-->
-<!--<div class="page-content">-->
-<!--<slot></slot>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="page-footer">-->
-<!--<slot name="footer"></slot>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</transition>-->
-<!--</template>-->
-
 <script>
     export default{
         name: 'LbPage',
@@ -69,6 +43,9 @@
         methods: {
             close() {
                 this.$emit('close');
+            },
+            clickHome() {
+                console.log('sss');
             }
         }
     }
